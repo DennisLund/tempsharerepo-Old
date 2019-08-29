@@ -32,7 +32,7 @@ def ransomwarepullandset():
     if(response):
       for line in response.text.splitlines():
         if(line.startswith('#') == False):
-          client.set(str(item),'ransomwaretracker-domain', 150)
+          client.set(str(line),'ransomwaretracker-domain', 150)
   except Exception as e:
     with open('/var/log/misppullLog.txt','w') as file:
       file.write('ransomwarepull failed with error: ' + str(e) + '\n')
